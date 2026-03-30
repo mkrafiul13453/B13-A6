@@ -43,9 +43,6 @@ const PricingCard = () => {
                     </div>
 
                     <div className=" bg-[#7828C8] rounded-3xl p-8 shadow-xl  ">
-                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FFEFD2] text-[#D97706] text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
-                            Most Popular
-                        </div>
                         <h3 className="text-2xl font-bold text-white mb-2">Pro</h3>
                         <p className="text-white/80 mb-6">Best for professionals</p>
                         <div className="mb-8">
