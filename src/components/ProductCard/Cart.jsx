@@ -26,7 +26,7 @@ const Cart = ({ carts, setCarts }) => {
                 </div>:
                 <>
                         {
-                            carts.map((cart) => <div className="space-y-4">
+                            carts.map((cart) => <div key={cart.id} className="space-y-4">
                                 <div className="flex items-center gap-6 rounded-xl border border-neutral-100 bg-neutral-50 p-6">
                                     <div className="size-16 overflow-hidden rounded-full bg-yellow-100/50 p-3">
                                         <img
