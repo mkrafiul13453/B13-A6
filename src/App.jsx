@@ -25,20 +25,17 @@ const [carts,setCarts]=useState([]);
     <NumberRating></NumberRating>
 
 
-    {/* Pricing heading */}
     <div className='text-center mt-10 '>
         <h1 className='text-4xl font-bold'>Premium Digital Tools</h1>
         <p>Choose from our curated collection of premium digital products designed to boost your productivity and creativity.</p>
     </div>
 
 
-      {/* Two tabs here */}
       <div className="tabs tabs-box justify-center mt-14">
         <input onClick={()=>setActiveTab("products")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold " aria-label="Products" defaultChecked />
         <input onClick={()=>setActiveTab("carts")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold" aria-label={`Cart ${carts.length}`}  />
       </div>
 
-      {/* This is the all product cards section */}
       {activeTab == "products" && <ProductCard promiseData={promiseData} carts={carts} setCarts={setCarts}></ProductCard>}
       {activeTab == "carts" && <Cart carts={carts} setCarts={setCarts}></Cart>}
 
