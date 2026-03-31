@@ -11,7 +11,7 @@ const Cart = ({ carts, setCarts }) => {
     const handelRemove =(cart)=>{
         const filterItems = carts.filter((c)=>c.id != cart.id)
         setCarts(filterItems);
-        toast.error("Remove successfully from the cart");
+        toast.error("Remove successfully from your cart");
     };
     return (
         <div className="flex flex-col gap-6 rounded-2xl border border-neutral-200 bg-white p-10 font-sans shadow-lg max-w-7xl mx-auto">
