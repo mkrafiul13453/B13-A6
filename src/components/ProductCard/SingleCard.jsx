@@ -1,11 +1,14 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
-const SingleCard = ({ product }) => {
+const SingleCard = ({ product, carts, setCarts }) => {
     const [buyNow,setBuyNow] = useState(false);
     const handelBuyNow =()=>{
         setBuyNow(true);
+        setCarts([...carts,product])
+        toast.success("Add to cart successfully")
     }
     return (
         <div className="relative w-full p-8 bg-white border border-gray-100 rounded-3xl shadow-sm font-sans">
@@ -48,7 +51,7 @@ const SingleCard = ({ product }) => {
             </ul>
 
             {/* Action Button */}
-            <button onClick={handelBuyNow} className={` btn w-full py-4 bg-[#7F26FD] hover:bg-[#6b1edb] text-2xl text-white font-bold rounded-2xl transition-colors duration-200 ${buyNow ? "opacity-50 cursor-not-allowed" : ""}`}>
+            <button onClick={handelBuyNow} className={` btn w-full py-4 bg-[#7F26FD] hover:bg-[#6b1edb] text-2xl text-white font-bold rounded-2xl transition-colors duration-200 ${buyNow ? "opacity-20 cursor-not-allowed" : ""}`}>
                 {buyNow?"Go to cart":"Buy now"}
             </button>
         </div>

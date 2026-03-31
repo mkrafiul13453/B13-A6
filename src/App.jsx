@@ -8,15 +8,19 @@ import PricingCard from './components/PricingCard/PricingCard'
 import WorkFlow from './components/WorkFlow/WorkFlow'
 import Footer from './components/Footer/Footer'
 import ProductCard from './components/ProductCard/ProductCard'
+import { useState } from 'react'
+import Cart from './components/ProductCard/Cart'
 
 
 
 const promiseData = fetch("data.json").then(res => res.json());
 function App() {
 
+const [activeTab,setActiveTab]=useState("products");
+const [carts,setCarts]=useState([]);
   return (
     <>
-    <Navbar></Navbar>
+    <Navbar carts={carts}></Navbar>
     <Banner></Banner>
     <NumberRating></NumberRating>
 
@@ -30,11 +34,13 @@ function App() {
 
       {/* Two tabs here */}
       <div className="tabs tabs-box justify-center mt-14">
-        <input type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold " aria-label="Products" defaultChecked />
-        <input type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold" aria-label="Cart (0)"  />
+        <input onClick={()=>setActiveTab("products")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold " aria-label="Products" defaultChecked />
+        <input onClick={()=>setActiveTab("carts")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold" aria-label={`Cart ${carts.length}`}  />
       </div>
 
-      <ProductCard promiseData={promiseData}></ProductCard>
+      {/* This is the all product cards section */}
+      {activeTab == "products" && <ProductCard promiseData={promiseData} carts={carts} setCarts={setCarts}></ProductCard>}
+      {activeTab == "carts" && <Cart carts={carts} setCarts={setCarts}></Cart>}
 
 
     <Step3></Step3>
