@@ -37,7 +37,7 @@ const [carts,setCarts]=useState([]);
       </div>
        
 
-      
+      {/* Here is conditionally showing the product card and the cart section */}
       {activeTab == "products" && <ProductCard promiseData={promiseData} carts={carts} setCarts={setCarts}></ProductCard>}
       {activeTab == "carts" && <Cart carts={carts} setCarts={setCarts}></Cart>}
 
