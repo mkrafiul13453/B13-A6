@@ -1,7 +1,7 @@
 # Name of the Project:
 This is a Digital Tools Buying Website
 
-#A little Description
+# A little Description:
 Here people can check out their offers. As well as the can add and remove their product form their cart.
 
 # Technology Stack:
