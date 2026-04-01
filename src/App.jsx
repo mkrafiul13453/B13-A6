@@ -24,18 +24,20 @@ const [carts,setCarts]=useState([]);
     <Banner></Banner>
     <NumberRating></NumberRating>
 
-
+    {/* THis is the heading of product card section. */}
     <div className='text-center mt-10 '>
         <h1 className='text-4xl font-bold'>Premium Digital Tools</h1>
         <p>Choose from our curated collection of premium digital products designed to boost your productivity and creativity.</p>
     </div>
 
-
+      {/* This is the tab section. */}
       <div className="tabs tabs-box justify-center mt-14">
         <input onClick={()=>setActiveTab("products")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold " aria-label="Products" defaultChecked />
         <input onClick={()=>setActiveTab("carts")} type="radio" name="my_tabs_1" className="tab rounded-full w-40 bg-transparent text-2xl font-semibold" aria-label={`Cart ${carts.length}`}  />
       </div>
+       
 
+      
       {activeTab == "products" && <ProductCard promiseData={promiseData} carts={carts} setCarts={setCarts}></ProductCard>}
       {activeTab == "carts" && <Cart carts={carts} setCarts={setCarts}></Cart>}
 
