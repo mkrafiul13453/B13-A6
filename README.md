@@ -1,11 +1,16 @@
 # Name of the Project:
 This is a Digital Tools Buying Website
--> Here people can check out their offers.
+
+#A little Description
+Here people can check out their offers. As well as the can add and remove their product form their cart.
 
 # Technology Stack:
 Frontend: React.js / JavaScript
+
 Styling: Tailwind CSS & DaisyUI
+
 Build Tool: Vite
+
 Data Fetching: API Integration
 
 # Key Features:
